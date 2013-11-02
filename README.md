@@ -3,6 +3,8 @@ omicronjs
 
 Javascript interface to oMicron server
 
+To install dependencies: npm install
+
 To start: node server.js
 
 
