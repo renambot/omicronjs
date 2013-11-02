@@ -1,0 +1,31 @@
+{
+  "name": "omicronjs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Retrieve and display omicron server data",
+  "keywords": [
+    "node",
+    "omicron",
+    "angular",
+    "web"
+  ],
+  "preferGlobal": false,
+  "author": "Luc Renambot <renambot@gmail.com> (http://renambot.lakephoto.org)",
+  "bugs": {
+    "email": "renambot@gmail.com"
+  },
+  "dependencies": {
+      "express" : "latest",
+      "sprint" : "latest",
+      "socket.io" : "latest"
+  },
+  "engines": {
+    "node": ">=0.6.x"
+  },
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "http://opensource.org/licenses/BSD-3-Clause"
+    }
+  ]
+}

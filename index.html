@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="utf-,8">
+    <title>Tracker.JS</title>
+
+  <script type="text/javascript" src="lib/angular.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
+  <script type="text/javascript" src="lib/socket.io.min.js">
+  </script>
+
+  <style type="text/css">
+    body   { font-family: Helvetica, Verdana, Arial, sans-serif; text-align:   justify;
+             margin-right: 12%;
+             margin-left:  12%; }
+    h1     { font-family: Helvetica, Verdana, Arial, sans-serif; margin-left: -12%; }
+    h2     { font-family: Helvetica, Verdana, Arial, sans-serif; margin-left:  -9%; }
+    h3     { font-family: Helvetica, Verdana, Arial, sans-serif; margin-left:  -6%; }
+    h4     { font-family: Helvetica, Verdana, Arial, sans-serif; margin-left:  -3%; }
+    dt     { font-family: Helvetica, Verdana, Arial, sans-serif; background: #EEEEEE; padding: 0.5em; }
+    pre    { font-family: Helvetica, Verdana, Arial, sans-serif; background: #beff9c; padding: 1.0em; }
+    p.note { font-family: Helvetica, Verdana, Arial, sans-serif; background: #ffc365; padding: 1.0em; }
+  </style>
+
+</head>
+
+<body>
+
+<pre style="font-size:3em; font-weight:bold; padding: 0.25em">
+  
+  (^_^)  Tracker.JS
+  
+</pre>
+
+ 
+<div class="container" ng-controller="TrackerController">
+
+<h1>Head</h1>
+
+<table border="0" cellpadding="10">
+<tr>
+<th style="text-align:center">Position</th>
+<th style="text-align:center">Orientation</th>
+</tr>
+<tr>
+<td>{{head.position[0] | number:2}},
+{{head.position[1] | number:2}}, 
+{{head.position[2] | number:2}}</td>
+<td>{{head.rotation[0]  | number:1}}, 
+{{head.rotation[1]  | number:1}}, 
+{{head.rotation[2]  | number:1}}</td>
+</tr>
+</table>
+
+<h1>Wand</h1>
+
+<table border="0" cellpadding="10">
+<tr>
+<th style="text-align:center">Position</th>
+<th style="text-align:center">Orientation</th>
+</tr>
+<tr>
+<td>{{wand.position[0] | number:2}},
+{{wand.position[1] | number:2}}, 
+{{wand.position[2] | number:2}}</td>
+<td>{{wand.rotation[0]  | number:1}}, 
+{{wand.rotation[1]  | number:1}}, 
+{{wand.rotation[2]  | number:1}}</td>
+</tr>
+</table>
+
+<h1>Pointer</h1>
+
+<p> Position : {{pointer.position[0] | number:2}} , {{pointer.position[1] | number:2}} </p>
+<p> Zoom : {{pointer.zoom }} </p>
+<p> Buttons : {{pointer.buttons[0]}} , {{pointer.buttons[1]}}, {{pointer.buttons[2]}} </p>
+
+</div>
+
+
+</body>
+</html>
