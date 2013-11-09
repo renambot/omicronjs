@@ -72,11 +72,38 @@
 
 <h1>Pointer</h1>
 
-<p> Position : {{pointer.position[0] | number:2}} , {{pointer.position[1] | number:2}} </p>
-<p> Zoom : {{pointer.zoom }} </p>
-<p> Buttons : {{pointer.buttons[0]}} , {{pointer.buttons[1]}}, {{pointer.buttons[2]}} </p>
+<!--     <div ng-init="friends = [
+      {name:'John', age:25, gender:'boy'},
+      {name:'Jessie', age:30, gender:'girl'},
+      {name:'Johanna', age:28, gender:'girl'},
+      {name:'Joy', age:15, gender:'girl'},
+      {name:'Mary', age:28, gender:'girl'},
+      {name:'Peter', age:95, gender:'boy'},
+      {name:'Sebastian', age:50, gender:'boy'},
+      {name:'Erika', age:27, gender:'girl'},
+      {name:'Patrick', age:40, gender:'boy'},
+      {name:'Samantha', age:60, gender:'girl'}
+    ]">
+      I have {{friends.length}} friends. They are:
+      <ul >
+        <li ng-repeat="friend in friends">
+          [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
+        </li>
+      </ul>
+    </div>
+ -->
+    <div>
+      There are {{numptrs}} pointers. They are:
+        <div ng-repeat="pointer in ptrs">
+          <p><b> {{pointer.id}}: {{pointer.label}} </b> - color: {{pointer.color}}</p>
+          <p> IP : {{pointer.ip}} </p>
+          <p> Position : {{pointer.position[0] | number:2}} , {{pointer.position[1] | number:2}} </p>
+          <p> Zoom : {{pointer.zoom }} </p>
+          <p> Buttons : {{pointer.mouse[0]}} , {{pointer.mouse[1]}}, {{pointer.mouse[2]}} </p>
+        </div>
+    </div>
 
-</div>
+
 
 
 </body>

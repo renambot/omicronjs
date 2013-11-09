@@ -1,9 +1,11 @@
 function TrackerController($scope)
-{
+{	
 	$scope.head  = {text:null, position:[0,0,0], rotation:[0,0,0]};
 	$scope.wand  = {text:null, position:[0,0,0], rotation:[0,0,0]};
 	$scope.wand2 = {text:null, position:[0,0,0], rotation:[0,0,0]};
-	$scope.pointer = {position: [0,0], zoom:0, buttons:[0,0,0]};
+	//$scope.pointer = {label:" ", ip:" ", position: [0,0], zoom:0, buttons:[0,0,0]};
+	$scope.ptrs = {};
+	$scope.numptrs = 0;
 
 	console.log("Href ", window.location.href);
 
@@ -43,9 +45,21 @@ function TrackerController($scope)
 	socket.on('pointer', function (data) {
 		// force angular data
 		$scope.$apply(function() {
-			$scope.pointer.position = [data.x,data.y];
-			$scope.pointer.zoom     = data.zoom;
-			$scope.pointer.buttons  = [data.b1,data.b2,data.b3];
+			if (data.id in $scope.ptrs) {
+				// pass
+			} else {
+				$scope.numptrs = $scope.numptrs + 1;
+			}
+			$scope.ptrs[ data.id ] = data;
+			
+			// $scope.pointer.label    = data.label;
+			// $scope.pointer.ip       = data.ip;
+			// $scope.pointer.position = data.position;
+			// $scope.pointer.zoom     = data.zoom;
+			// $scope.pointer.buttons  = data.mouse;
+
+			// {label:ptrinfo[0], ip:ptrinfo[1], mouse:[], color:colorpt, zoom:0, position:[0,0]};
+
 		});
   	});
 
